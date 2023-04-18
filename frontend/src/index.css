@@ -11,3 +11,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btn-primary {
+  background-color: #9e4f24 !important;
+  outline-color: #9e4f24 !important;
+}
+
+.text-primary {color: #9e4f24 !important}
+
+.footerSection{
+  background-color: #9e4f24;
+  color: #000000;
+  padding: 10px 10px 10px 10px;
+}
+
+.btn-danger {
+  background-color: #9e4f24;
+}
+
+.text-system-grey {
+  color: #222222 !important;
+}
