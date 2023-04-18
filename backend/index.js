@@ -51,6 +51,25 @@ app.get("/employees/:id", async (request, response) => {
   }
 });
 
+// Update employee by id
+app.put("/employees/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+    const name = request.body.name;
+    const surname = request.body.surname;
+    const age = request.body.age;
+    const address = request.body.address;
+    const department = request.body.department;
+
+    const updateEmployee = await pool.query(
+      "UPDATE employees SET name = $1, surname = $2, age = $3, address = $4, department = $5 WHERE employee_id = $6",
+      [name, surname, age, address, department, id]
+    );
+    response.json("The employee was updated!");
+  } catch (error) {
+    console.error(error.message);
+  }
+});
 
 app.listen(5000, () => {
   console.log("The server is running on port 5000");
