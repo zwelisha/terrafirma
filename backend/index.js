@@ -28,7 +28,6 @@ app.post("/employees", async (request, response) => {
 });
 
 // Get employees
-//Get all learners
 app.get("/employees", async (request, response) => {
   try {
     const employees = await pool.query("SELECT * FROM employees");
@@ -37,6 +36,21 @@ app.get("/employees", async (request, response) => {
     console.error(error.message);
   }
 });
+
+// Get employee by id
+app.get("/employees/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+    const employee = await pool.query(
+      "SELECT * FROM employees  WHERE employee_id = $1",
+      [id]
+    );
+    response.json(employee.rows[0]);
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
 
 app.listen(5000, () => {
   console.log("The server is running on port 5000");
