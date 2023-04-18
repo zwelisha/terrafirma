@@ -71,6 +71,21 @@ app.put("/employees/:id", async (request, response) => {
   }
 });
 
+//Delete an employee
+
+app.delete("/employees/:id", async (request, response) => {
+  try {
+    const { id } = request.params;
+    const deleteEmployee = await pool.query(
+      "DELETE FROM employees WHERE employee_id = $1",
+      [id]
+    );
+    response.json("An employee was deleted!");
+  } catch (error) {
+    console.error(error.message);
+  }
+});
+
 app.listen(5000, () => {
   console.log("The server is running on port 5000");
 });
