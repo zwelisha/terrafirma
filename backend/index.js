@@ -8,6 +8,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Create employee
 app.post("/employees", async (request, response) => {
   try {
     const name = request.body.name;
@@ -22,7 +23,18 @@ app.post("/employees", async (request, response) => {
     );
     response.json(employee);
   } catch (error) {
-    console.log(error.message);
+    console.error(error.message);
+  }
+});
+
+// Get employees
+//Get all learners
+app.get("/employees", async (request, response) => {
+  try {
+    const employees = await pool.query("SELECT * FROM employees");
+    response.json(employees.rows);
+  } catch (error) {
+    console.error(error.message);
   }
 });
 
