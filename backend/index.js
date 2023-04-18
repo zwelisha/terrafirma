@@ -8,9 +8,19 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post("/employees", (request, result) => {
+app.post("/employees", async (request, response) => {
   try {
-    console.log(request.body);
+    const name = request.body.name;
+    const surname = request.body.surname;
+    const age = request.body.age;
+    const address = request.body.address;
+    const department = request.body.department;
+
+    const employee = await pool.query(
+      "INSERT INTO employees (name, surname, age, address, department) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [name, surname, age, address, department]
+    );
+    response.json(employee);
   } catch (error) {
     console.log(error.message);
   }

@@ -1,6 +1,6 @@
 
 -- Things like name, surname, age, address
-CREATE DATABASE employeemanagement;
+CREATE DATABASE siyacodamaindb;
 
 CREATE TABLE employees (
     employee_id SERIAL PRIMARY KEY,
@@ -9,4 +9,4 @@ CREATE TABLE employees (
     age INT NOT NULL,
     address VARCHAR(255) NOT NULL,
     department VARCHAR(100) NOT NULL
-)
+);
