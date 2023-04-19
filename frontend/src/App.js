@@ -22,7 +22,7 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="md-col-12">
-            <h4 className="text-primary mt-5 mb-5">ALL EMPLOYEES</h4>
+            <h4 className="text-center mt-5 mb-5">ALL EMPLOYEES</h4>
           </div>
         </div>
       </div>

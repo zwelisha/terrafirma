@@ -119,7 +119,7 @@ const EditEmployee = ({ employee }) => {
                 data-dismiss="modal"
                 onClick={(e) => updateEmployee(e)}
               >
-                EDIT
+                SAVE
               </button>
               <button
                 type="button"

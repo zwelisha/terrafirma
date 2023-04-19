@@ -7,11 +7,12 @@ const DisplayEmployees = () => {
   // Delete an employee
   const deleteEmployee = async (id) => {
     try {
-      const deleteEmployee = await fetch(
+      const response = await fetch(
         `http://localhost:5000/employees/${id}`,
         { method: "DELETE" }
       );
-      console.log(deleteEmployee.status);
+      console.log(response.status);
+      window.location = "/";
       //Only show employees that have not been deleted
       setEmployees(employees.filter((employee) => employees.employee_id !== id));
     } catch (error) {
