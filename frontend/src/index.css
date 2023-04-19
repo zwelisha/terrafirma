@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f6f6f6 !important;
 }
 
 code {
@@ -20,13 +21,15 @@ code {
 .text-primary {color: #9e4f24 !important}
 
 .footerSection{
-  background-color: #9e4f24;
+  
   color: #000000;
   padding: 10px 10px 10px 10px;
+  margin-top: 20px;
 }
 
 .btn-danger {
-  background-color: #9e4f24;
+  background-color: #9e4f24 !important;
+  outline-color: #9e4f24 !important;
 }
 
 .text-system-grey {

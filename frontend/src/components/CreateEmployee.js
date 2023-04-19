@@ -19,7 +19,7 @@ const CreateEmployee = () => {
       console.log(response.status);
       console.log(response);
       if (response.status === 200) {
-        alert("Employee added successfully!");
+        alert("Employee saved successfully!");
       }
       window.location = "/";
     } catch (error) {
@@ -29,10 +29,6 @@ const CreateEmployee = () => {
 
   return (
     <Fragment>
-      <h3 className="text-center text-primary">
-        Terra-Firma Employee Management App
-      </h3>
-      <hr />
       <div className="container">
         <button
           type="button"
@@ -90,7 +86,7 @@ const CreateEmployee = () => {
                       />
                     </div>
                     <div className="form-group col-md-6">
-                      <label htmlFor="inputDepartment">Description</label>
+                      <label htmlFor="inputDepartment">Department</label>
                       <input
                         rows="5"
                         type="text"
